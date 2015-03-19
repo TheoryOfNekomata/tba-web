@@ -1,0 +1,24 @@
+html.layout--home
+  body
+    > section
+      @media (min-width: $screen-md)
+        width: inherit
+        height: inherit
+      @media (max-width: $screen-sm-max)
+        width: 100vw
+        height: 100vh
+      padding-top: $section-padding + $navbar-height
+      padding-bottom: $section-padding
+      hgroup
+        margin-top: 0
+        margin-bottom: ($line-height-computed / 2)
+        > *
+          margin: 0
+      h2
+        margin-top: 0
+    > nav.nav-sidebar
+      ~ section:not(:first-child)
+        padding-left: $nav-sidebar-width
+
+
+@import "sections/hero"

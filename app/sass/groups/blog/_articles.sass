@@ -1,0 +1,19 @@
+html.group--blog
+  article
+    header h2 + div
+      margin: 0 (0 - $panel-body-padding) $panel-body-padding
+      padding: $panel-body-padding
+      color: $panel-default-text
+      background-color: $panel-default-heading-bg
+      border-color: $panel-default-border
+      time
+        font-size: 112.5%
+        > span
+          display: inline-block
+          + span
+            margin-left: $padding-base-horizontal
+    .article__author
+      .author__name
+        font-size: 125%
+      .author__picture
+        margin-right: $padding-base-horizontal

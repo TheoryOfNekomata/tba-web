@@ -1,0 +1,19 @@
+.nav-sidebar
+  width: $nav-sidebar-width
+  height: 100%
+  padding-top: $nav-sidebar-padding + $navbar-height
+  padding-bottom: $nav-sidebar-padding
+  h2
+    margin-top: 0
+  &.affix-top, &.affix-bottom
+    @media (min-width: $screen-md)
+      position: absolute
+    position: fixed
+  &.affix
+    top: 0
+  @media (max-width: $screen-sm-max)
+    left: 0 - $nav-sidebar-width
+    &.visible
+      left: 0
+  .sidebar-nav
+    margin-bottom: $padding-base-vertical

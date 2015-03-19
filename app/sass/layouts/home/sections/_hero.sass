@@ -1,0 +1,66 @@
+html.layout--home
+  body > section.section--hero
+    padding: $navbar-height 0 0
+    position: relative
+    > .jumbotron
+      margin: 0
+      width: inherit
+      height: inherit
+      position: relative
+      vertical-align: middle
+      > *
+        position: absolute
+        top: 0
+        left: 0
+        width: inherit
+        height: inherit
+        text-align: center
+      .section--hero__content__wrapper
+        display: table
+        width: inherit
+        height: inherit
+        .section--hero__content
+          display: table-cell
+          width: inherit
+          height: inherit
+          vertical-align: middle
+          .content__band
+            //background-color: transparentize($body-bg, 0.25)
+            padding: $jumbotron-padding
+      > .section--hero__fg
+        background-color: transparentize($body-bg, 0.25)
+      > .section--hero__bg
+        overflow: hidden
+        .quad-wrapper
+          display: inline-block
+          vertical-align: top
+          padding: 0
+          margin: 0
+          width: 100%
+          height: 100%
+          overflow: hidden
+          > *
+            display: inline-block
+            vertical-align: top
+            padding: 0
+            margin: 0
+            width: 50%
+            height: 50%
+            overflow: hidden
+    > .bottom-scroll-container
+      position: absolute
+      bottom: 0
+      width: inherit
+      text-align: center
+      padding: $jumbotron-padding 0
+      a
+        background-color: transparentize($body-bg, 0.5)
+        border-radius: 50%
+        color: $text-color
+        width: 50px
+        height: 50px
+        &:hover
+          background-color: $body-bg
+        &:active
+          background-color: $text-color
+          color: $body-bg

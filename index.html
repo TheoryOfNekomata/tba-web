@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>#thebloodambulance</title>
+  <link rel="stylesheet" type="text/css" href="lib/Metrize_Icons/Font-Face/style.css">
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body data-spy="scroll--custom" data-target=".nav-sidebar">
@@ -26,8 +27,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="pool.html">Pool</a></li>
-        <li><a href="links.html">Links</a></li>
+        <li><a href="#section--pool">Pool</a></li>
+        <li><a href="#section--links">Links</a></li>
       </ul>
       <!--<form class="navbar-form navbar-left" role="search">-->
         <!--<div class="form-group">-->
@@ -71,11 +72,13 @@
           <div class="content__band">
             <hgroup>
               <h1>#thebloodambulance</h1>
-              <!-- <h2>{{ subtitle }}</h2> -->
+              <h2>Welcome to The Blood Ambulance</h2>
             </hgroup>
+            <!--
             <p class="lead">
-              Welcome to The Blood Ambulance.
+
             </p>
+            -->
             <!--
             <div>
               <a href="archive-stream.html" class="btn btn-lg btn-primary">Call to Action</a>
@@ -87,10 +90,11 @@
     </div>
   </div>
   <div class="bottom-scroll-container">
-    <a class="btn btn-lg btn-link" href="#section--start"><i class="glyphicon glyphicon-chevron-down"></i></a>
+    <a class="btn btn-lg btn-link" href="#section--pool"><i class="icon-arrow-down-thin"></i></a>
   </div>
 </section>
 
+<!--
 <nav class="nav-sidebar" data-spy="nav-affix">
   <div class="container-fluid">
     <h2>Contents</h2>
@@ -105,41 +109,209 @@
     </ul>
   </div>
 </nav>
+-->
 
-<a name="section--start"></a>
-<a name="section--section-1"></a>
-<section>
-  <div class="container-fluid">
-    <h2>Section 1</h2>
-    <p>
-      Japanese calligraphy was influenced by, and influenced, Zen thought. For any particular piece of paper, the calligrapher has but one chance to create with the brush. The brush strokes cannot be corrected, and even a lack of confidence shows up in the work. The calligrapher must concentrate and be fluid in execution. The brush writes a statement about the calligrapher at a moment in time (see Hitsuzendo, the Zen way of the brush). Through Zen, Japanese calligraphy absorbed a distinct Japanese aesthetic often symbolised by the ensō or circle of enlightenment.
-    </p>
+<section id="section--pool">
+  <header>
+    <div class="container">
+      <h2>Pool</h2>
+    </div>
+  </header>
+  <div>
+    <div class="container">
+      <div>
+        <div class="pool__sidebar container-fluid">
+          <div>
+            <div class="sidebar__search">
+              <form>
+                <div class="form-group">
+                  <span class="sr-only">Search Pools</span>
+                  <span class="input-group">
+                    <input type="search" placeholder="Search Pools" class="form-control">
+                    <span class="input-group-btn">
+                      <button class="btn btn-primary" type="submit">Search</button>
+                    </span>
+                  </span>
+                </div>
+              </form>
+            </div>
+            <div class="sidebar__list-overflow">
+              <div class="sidebar__list">
+                <a href="#" class="list__name">
+                  <h3>
+                    <i class="icon-arrow-up-thin"></i>
+                    Featured
+                  </h3>
+                </a>
+                <ul class="list__items collapse in">
+                  <li>
+                    <a href="#">
+                      <ul class="items__thumb items__thumb--single">
+                        <li style="background-image: url('app/img/bg/home/bg-img%20(115).png')"></li>
+                      </ul>
+                      <div class="items__label">
+                        <strong>Single</strong>
+                        <time datetime="123">2 days ago</time>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <ul class="items__thumb items__thumb--double">
+                        <li style="background-image: url('app/img/bg/home/bg-img%20(15).png')"></li>
+                        <li style="background-image: url('app/img/bg/home/bg-img%20(46).png')"></li>
+                      </ul>
+                      <div class="items__label">
+                        <strong>Double</strong>
+                        <time datetime="123">2 days ago</time>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <ul class="items__thumb items__thumb--triple">
+                        <li style="background-image: url('app/img/bg/home/bg-img%20(76).png')"></li>
+                        <li style="background-image: url('app/img/bg/home/bg-img%20(27).png')"></li>
+                        <li style="background-image: url('app/img/bg/home/bg-img%20(86).png')"></li>
+                      </ul>
+                      <div class="items__label">
+                        <strong>Triple</strong>
+                        <time datetime="123">2 days ago</time>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="active">
+                    <a href="#">
+                      <ul class="items__thumb items__thumb--multi">
+                        <li style="background-image: url('app/img/bg/home/bg-img%20(65).png')"></li>
+                        <li style="background-image: url('app/img/bg/home/bg-img%20(12).png')"></li>
+                        <li style="background-image: url('app/img/bg/home/bg-img%20(19).png')"></li>
+                        <li class="thumb__extra-indicator">
+                          <span>
+                            +1
+                          </span>
+                        </li>
+                      </ul>
+                      <div class="items__label">
+                        <strong>Multi</strong>
+                        <time datetime="123">2 days ago</time>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="sidebar__list">
+                <a href="#" class="list__name">
+                  <h3>
+                    <i class="icon-arrow-up-thin"></i>
+                    Popular
+                  </h3>
+                </a>
+                <ul class="list__items collapse in">
+                  <li>
+                    <a href="#">
+                      <ul class="items__thumb items__thumb--single">
+                        <li style="background-image: url('app/img/bg/home/bg-img%20(115).png')"></li>
+                      </ul>
+                      <div class="items__label">
+                        <strong>Single</strong>
+                        <time datetime="123">2 days ago</time>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <ul class="items__thumb items__thumb--double">
+                        <li style="background-image: url('app/img/bg/home/bg-img%20(15).png')"></li>
+                        <li style="background-image: url('app/img/bg/home/bg-img%20(46).png')"></li>
+                      </ul>
+                      <div class="items__label">
+                        <strong>Double</strong>
+                        <time datetime="123">2 days ago</time>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <ul class="items__thumb items__thumb--triple">
+                        <li style="background-image: url('app/img/bg/home/bg-img%20(76).png')"></li>
+                        <li style="background-image: url('app/img/bg/home/bg-img%20(27).png')"></li>
+                        <li style="background-image: url('app/img/bg/home/bg-img%20(86).png')"></li>
+                      </ul>
+                      <div class="items__label">
+                        <strong>Triple</strong>
+                        <time datetime="123">2 days ago</time>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <ul class="items__thumb items__thumb--multi">
+                        <li style="background-image: url('app/img/bg/home/bg-img%20(65).png')"></li>
+                        <li style="background-image: url('app/img/bg/home/bg-img%20(12).png')"></li>
+                        <li style="background-image: url('app/img/bg/home/bg-img%20(19).png')"></li>
+                        <li class="thumb__extra-indicator">
+                          <span>
+                            +1
+                          </span>
+                        </li>
+                      </ul>
+                      <div class="items__label">
+                        <strong>Multi</strong>
+                        <time datetime="123">2 days ago</time>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pool__content">
+          <div class="container-fluid">
+            <div class="content__overflow">
+              <ul class="js-packery" data-packery-options='{ "itemSelector": "li", "gutter": 0, "isResizeBound": false }'></ul>
+            </div>
+          </div>
+        </div>
+        <!--
+        <p>
+          Japanese calligraphy was influenced by, and influenced, Zen thought. For any particular piece of paper, the calligrapher has but one chance to create with the brush. The brush strokes cannot be corrected, and even a lack of confidence shows up in the work. The calligrapher must concentrate and be fluid in execution. The brush writes a statement about the calligrapher at a moment in time (see Hitsuzendo, the Zen way of the brush). Through Zen, Japanese calligraphy absorbed a distinct Japanese aesthetic often symbolised by the ensō or circle of enlightenment.
+        </p>
+        -->
+      </div>
+    </div>
   </div>
 </section>
 
-<a name="section--section-2"></a>
-<section>
-  <div class="container-fluid">
-    <h2>Section 2</h2>
-    <p>
-      Japanese calligraphy was influenced by, and influenced, Zen thought. For any particular piece of paper, the calligrapher has but one chance to create with the brush. The brush strokes cannot be corrected, and even a lack of confidence shows up in the work. The calligrapher must concentrate and be fluid in execution. The brush writes a statement about the calligrapher at a moment in time (see Hitsuzendo, the Zen way of the brush). Through Zen, Japanese calligraphy absorbed a distinct Japanese aesthetic often symbolised by the ensō or circle of enlightenment.
-    </p>
-  </div>
-</section>
-
-<a name="section--section-3"></a>
-<section>
-  <div class="container-fluid">
-    <h2>Section 3</h2>
-    <p>
-      Japanese calligraphy was influenced by, and influenced, Zen thought. For any particular piece of paper, the calligrapher has but one chance to create with the brush. The brush strokes cannot be corrected, and even a lack of confidence shows up in the work. The calligrapher must concentrate and be fluid in execution. The brush writes a statement about the calligrapher at a moment in time (see Hitsuzendo, the Zen way of the brush). Through Zen, Japanese calligraphy absorbed a distinct Japanese aesthetic often symbolised by the ensō or circle of enlightenment.
-    </p>
+<section id="section--links">
+  <header>
+    <div class="container">
+      <h2>Links</h2>
+    </div>
+  </header>
+  <div class="container">
+    <ul>
+      <li>
+        <a href="https://www.facebook.com/groups/thebloodambulance">Facebook</a>
+      </li>
+      <li>
+        <a href="https://thebloodambulance.slack.com">Slack</a>
+        <ins>(for invites, <a href="http://invites.thebloodambulance.ml/">click here</a>)</ins>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <a href="http://seedcloud-awk.cloudapp.net/web/">SeedCloud</a>
+      </li>
+    </ul>
   </div>
 </section>
 
 <footer>
   <div class="container">
     <div class="row">
+      <!--
       <div class="col-md-6">
         <h2>About Us</h2>
         <p>
@@ -151,7 +323,9 @@
           <li><a href="privacy-policy.html">Privacy Policy</a></li>
         </ul>
       </div>
-      <div class="col-md-6">
+      -->
+      <div class="col-md-12">
+        <!--
         <h2>Contact</h2>
         <form class="form">
           <div class="form-group">
@@ -163,13 +337,10 @@
             </div>
           </div>
         </form>
-        <ul class="list-inline">
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Twitter</a></li>
-          <li><a href="#">Google+</a></li>
-          <li><a href="#">Tumblr</a></li>
-          <li><a href="#">E-mail</a></li>
-        </ul>
+        -->
+        <div class="text-center">
+          The Blood Ambulance, 2015
+        </div>
       </div>
     </div>
   </div>

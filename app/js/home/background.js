@@ -58,18 +58,26 @@
                 return $("<div>").append($newQuadNode).html();
             }
 
+            var $elem = $(sel);
+
+            var parallaxMax = $elem.height() / 4;
+
             function centerBg() {
                 var $elemChildren = $elem.children(".quad-wrapper");
+
+                if($(window).scrollTop() + $(window).height() < $elem.offset().top
+                    || $(window).scrollTop() > $elem.offset().top + $elem.height()
+                ) {
+                    return;
+                }
 
                 $elemChildren
                     .css({
                         position: 'absolute',
-                        left: ($elem.width() - $elemChildren.width()) / 2,
-                        top: ($elem.height() - $elemChildren.height()) / 2
+                        left: (($elem.width() - $elemChildren.width()) / 2),
+                        top: ((($elem.height() - $elemChildren.height()) / 2) + ($elem.height() / 2 * ($(window).scrollTop() / $(document).height() * 2)))
                     });
             }
-
-            var $elem = $(sel);
 
             // clear element, force overflow
             $elem
@@ -82,7 +90,9 @@
                     position: 'absolute',
                     width: $(window).width() * 1.5,
                     //height: $(window).height() * 1.5
-                    height: $(window).width() * 1.5
+                    height: $(window).width() * 1.5,
+                    left: ($elem.width() - $(window).width() * 1.5) / 2,
+                    top: ($elem.height() - $(window).width() * 1.5) / 2
                 })
                 .appendTo($elem);
 
@@ -92,7 +102,11 @@
                     .appendTo($mainQuad);
             }
 
-            $(window).on("resize", centerBg);
+            $(window)
+                .on("resize.tba.backgroundparallax", centerBg)
+                .on("scroll.tba.backgroundparallax", centerBg);
+
+            console.log($elem.offset().top);
         }
 
         var imgSrcs = getImageSrcs(

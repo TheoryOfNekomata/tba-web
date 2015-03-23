@@ -1,0 +1,208 @@
+html.layout--home
+  section#section--pool
+    header
+      padding-top: $navbar-height + $navbar-margin-bottom
+      position: absolute
+      top: 0
+      left: 0
+      height: $section__header__height
+      width: inherit
+      & + *
+        height: inherit
+        width: inherit
+        padding-top: 125px
+        position: absolute
+        top: 0
+        left: 0
+        > .container
+          height: 100%
+          position: relative
+          > *
+            height: inherit
+            position: relative
+            > *
+              position: absolute
+    .pool__sidebar
+      top: 0
+      left: 0
+      width: $pool__sidebar__width
+      height: inherit
+      z-index: $pool__sidebar__z-index
+      > div
+        position: relative
+        top: 0
+        left: 0
+        width: 100%
+        height: inherit
+        padding-top: 51px
+        .sidebar__search
+          position: absolute
+          top: 0
+          left: 0
+          height: 51px
+          width: inherit
+        .sidebar__list-overflow
+          width: inherit
+          height: inherit
+          overflow-y: auto
+      .sidebar__list
+        .list__name
+          display: block
+          color: $brand-color-4
+          outline: none
+          text-decoration: none
+        .list__items
+          display: block
+          padding: 0
+          margin: 0
+          > li
+            display: block
+            //+ li
+              //margin-top: $padding-base-vertical
+            > a
+              display: block
+              width: 100%
+              height: 100%
+              position: relative
+              border: 4px solid transparent
+              color: $brand-color-4
+              outline: none
+              .items__label
+                padding: $padding-base-vertical $padding-base-horizontal
+              &:hover, &:focus
+                text-decoration: none
+                border-color: $brand-color-5
+                transform: none
+                .items__thumb
+                  opacity: 1
+            &.active > a
+              border-color: $brand-primary
+              > .items__thumb
+                opacity: 1
+        @media (min-width: $screen-sm)
+          .list__items > li
+            height: $pool__list-item__height
+            > a
+              &:active
+                transform: scale(0.9)
+              .items__label
+                position: absolute
+                bottom: 0
+                left: 0
+                text-shadow: 0 0 4px #000, 0 0 4px #000
+                //background-color: transparentize($navbar-default-bg, 0.25)
+
+                width: 100%
+                > *
+                  display: block
+              .items__thumb
+                height: 100%
+                width: 100%
+                padding: 0
+                opacity: 0.25
+                display: block
+                > li
+                  display: block
+                  background-size: 175%
+                  background-position: center
+                  background-repeat: no-repeat
+                  background-color: transparentize($brand-color-1, 0.75)
+                  float: left
+                &.items__thumb--single > li
+                  width: 100%
+                  height: 100%
+                &.items__thumb--double > li
+                  width: 50%
+                  height: 100%
+                &.items__thumb--triple > li
+                  width: 50%
+                  height: 100%
+                  &:first-child,
+                  &:last-child
+                    height: 50%
+                    float: right
+                &.items__thumb--multi > li
+                  width: 50%
+                  height: 50%
+                  &.thumb__extra-indicator
+                    background-color: $brand-color-1
+                    display: table
+                    text-align: center
+                    font-size: 300%
+                    font-weight: 200
+                    color: transparentize($brand-color-4, 0.5)
+                    text-shadow: none
+                    > *
+                      display: table-cell
+                      vertical-align: middle
+        @media (max-width: $screen-xs-max)
+          .list__items > li
+            > a
+              > *
+                position: static
+              > .items__thumb
+                display: none
+              > .items__label
+                text-align: right
+                > strong
+                  float: left
+              &:hover, &:focus
+                background-color: $brand-color-5
+            &.active > a
+              border-color: $brand-primary
+              background-color: $brand-primary
+
+    .pool__content
+      padding-left: $pool__sidebar__width
+      width: 100%
+      height: inherit
+      .container-fluid
+        width: inherit
+        height: inherit
+        .content__overflow
+          width: inherit
+          height: inherit
+          overflow-y: auto
+          overflow-x: hidden
+          .js-packery
+            width: inherit
+            display: block
+            padding: 0
+            > li
+              display: block
+              height: $pool__tile__height
+              text-shadow: 0 0 4px #000, 0 0 4px #000
+              > a
+                display: block
+                height: 100%
+                width: 100%
+                background-position: center
+                background-repeat: no-repeat
+                background-color: transparentize($brand-color-1, 0.75)
+                position: relative
+                border: 4px solid $body-bg
+                opacity: 0.25
+                .pool-item__label
+                  position: absolute
+                  bottom: 0
+                  left: 0
+                  width: inherit
+                  padding: $padding-base-vertical $padding-base-horizontal
+                  display: block
+                  opacity: 0
+                  color: $brand-color-4
+                  font-size: 150%
+                  font-weight: 200
+                  line-height: 1
+                //> *
+                  //display: none
+                &:hover, &:focus
+                  text-decoration: none
+                  opacity: 1
+                  border-color: $brand-color-5
+                  transform: none
+                  .pool-item__label
+                    opacity: 1
+                &:active
+                  transform: scale(0.9)
+                outline: none

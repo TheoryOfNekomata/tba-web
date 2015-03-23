@@ -5,10 +5,12 @@ html.layout--home
         width: inherit
         height: inherit
       @media (max-width: $screen-sm-max)
-        width: 100vw
+        //width: 100vw
+        width: 100%
         height: 100vh
       padding-top: $section-padding + $navbar-height
       padding-bottom: $section-padding
+      position: relative
       hgroup
         margin-top: 0
         margin-bottom: ($line-height-computed / 2)
@@ -16,9 +18,11 @@ html.layout--home
           margin: 0
       h2
         margin-top: 0
+        font-size: $font-size-h1
     > nav.nav-sidebar
       ~ section:not(:first-child)
         padding-left: $nav-sidebar-width
 
 
 @import "sections/hero"
+@import "sections/pool"

@@ -15540,18 +15540,26 @@ if ( typeof define === 'function' && define.amd ) {
                 return $("<div>").append($newQuadNode).html();
             }
 
+            var $elem = $(sel);
+
+            var parallaxMax = $elem.height() / 4;
+
             function centerBg() {
                 var $elemChildren = $elem.children(".quad-wrapper");
+
+                if($(window).scrollTop() + $(window).height() < $elem.offset().top
+                    || $(window).scrollTop() > $elem.offset().top + $elem.height()
+                ) {
+                    return;
+                }
 
                 $elemChildren
                     .css({
                         position: 'absolute',
-                        left: ($elem.width() - $elemChildren.width()) / 2,
-                        top: ($elem.height() - $elemChildren.height()) / 2
+                        left: (($elem.width() - $elemChildren.width()) / 2),
+                        top: ((($elem.height() - $elemChildren.height()) / 2) + ($elem.height() / 2 * ($(window).scrollTop() / $(document).height() * 2)))
                     });
             }
-
-            var $elem = $(sel);
 
             // clear element, force overflow
             $elem
@@ -15564,7 +15572,9 @@ if ( typeof define === 'function' && define.amd ) {
                     position: 'absolute',
                     width: $(window).width() * 1.5,
                     //height: $(window).height() * 1.5
-                    height: $(window).width() * 1.5
+                    height: $(window).width() * 1.5,
+                    left: ($elem.width() - $(window).width() * 1.5) / 2,
+                    top: ($elem.height() - $(window).width() * 1.5) / 2
                 })
                 .appendTo($elem);
 
@@ -15574,7 +15584,11 @@ if ( typeof define === 'function' && define.amd ) {
                     .appendTo($mainQuad);
             }
 
-            $(window).on("resize", centerBg);
+            $(window)
+                .on("resize.tba.backgroundparallax", centerBg)
+                .on("scroll.tba.backgroundparallax", centerBg);
+
+            console.log($elem.offset().top);
         }
 
         var imgSrcs = getImageSrcs(
@@ -15585,6 +15599,82 @@ if ( typeof define === 'function' && define.amd ) {
         makeBg(".section--hero__bg", imgSrcs);
     });
 })($, Math);
+
+(function($, Math, undefined) {
+    $(function() {
+        var packery = $(".js-packery");
+
+        var packeryTimeout = null;
+
+        var poolTileHeight = 125; // _variables.sass:5
+
+        for(var i = 1; i <= 50; i++) {
+            var randomWidth = Math.floor(Math.random() * 100) + 150;
+
+            packery
+                .append($("<li>")
+                    .css({
+                        "width": randomWidth
+                    })
+                    .append($("<a>")
+                        .attr("href", "#")
+                        .css({
+                            "background-image": "url('app/img/bg/home/bg-img%20(" + (Math.floor(Math.random() * 122) + 1) + ").png')",
+                            "background-size": (randomWidth > poolTileHeight ? "100%" : "auto 100%")
+                        })
+                        .append($("<span>")
+                            .addClass("pool-item__label")
+                            .html("Image Name")
+                    )
+                )
+            );
+        }
+
+        function layoutPoolItems() {
+            packery.packery();
+        }
+
+        $(window).on("resize.tba.pool", function() {
+            if(packeryTimeout !== null) {
+                clearTimeout(packeryTimeout);
+            }
+
+            packeryTimeout = setTimeout(layoutPoolItems, 250);
+        });
+
+        packeryTimeout = setTimeout(layoutPoolItems, 250);
+    });
+})($, Math);
+
+(function($, undefined) {
+    $(function() {
+        $("a.list__name")
+            .on("click.tba.sidebar.list.collapse", function(e) {
+                e.preventDefault();
+                var $link = $(this);
+                $link
+                    .next()
+                    .collapse('toggle');
+            })
+            .next()
+            .on("show.bs.collapse", function() {
+                $(this).removeClass("hidden");
+                var $link = $(this).prev();
+                $link.find("i")
+                    .removeClass("icon-arrow-down-thin")
+                    .addClass("icon-arrow-up-thin");
+            })
+            .on("hidden.bs.collapse", function() {
+                $(this).addClass("hidden");
+            })
+            .on("hide.bs.collapse", function() {
+                var $link = $(this).prev();
+                $link.find("i")
+                    .addClass("icon-arrow-down-thin")
+                    .removeClass("icon-arrow-up-thin");
+            });
+    });
+})($);
 
 /*global $*/
 
